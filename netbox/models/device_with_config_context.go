@@ -69,7 +69,7 @@ type DeviceWithConfigContext struct {
 
 	// device role
 	// Required: true
-	DeviceRole *NestedDeviceRole `json:"device_role"`
+	DeviceRole *NestedDeviceRole `json:"role"`
 
 	// device type
 	// Required: true
@@ -353,16 +353,16 @@ func (m *DeviceWithConfigContext) validateDescription(formats strfmt.Registry) e
 
 func (m *DeviceWithConfigContext) validateDeviceRole(formats strfmt.Registry) error {
 
-	if err := validate.Required("device_role", "body", m.DeviceRole); err != nil {
+	if err := validate.Required("role", "body", m.DeviceRole); err != nil {
 		return err
 	}
 
 	if m.DeviceRole != nil {
 		if err := m.DeviceRole.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("device_role")
+				return ve.ValidateName("role")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device_role")
+				return ce.ValidateName("role")
 			}
 			return err
 		}
@@ -882,9 +882,9 @@ func (m *DeviceWithConfigContext) contextValidateDeviceRole(ctx context.Context,
 	if m.DeviceRole != nil {
 		if err := m.DeviceRole.ContextValidate(ctx, formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("device_role")
+				return ve.ValidateName("role")
 			} else if ce, ok := err.(*errors.CompositeError); ok {
-				return ce.ValidateName("device_role")
+				return ce.ValidateName("role")
 			}
 			return err
 		}

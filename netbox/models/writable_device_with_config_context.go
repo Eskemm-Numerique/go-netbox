@@ -70,7 +70,7 @@ type WritableDeviceWithConfigContext struct {
 
 	// Device role
 	// Required: true
-	DeviceRole *int64 `json:"device_role"`
+	DeviceRole *int64 `json:"role"`
 
 	// Device type
 	// Required: true
@@ -340,7 +340,7 @@ func (m *WritableDeviceWithConfigContext) validateDescription(formats strfmt.Reg
 
 func (m *WritableDeviceWithConfigContext) validateDeviceRole(formats strfmt.Registry) error {
 
-	if err := validate.Required("device_role", "body", m.DeviceRole); err != nil {
+	if err := validate.Required("role", "body", m.DeviceRole); err != nil {
 		return err
 	}
 
