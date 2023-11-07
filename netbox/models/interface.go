@@ -55,7 +55,7 @@ type Interface struct {
 	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
-	ConnectedEndpoints []*string `json:"connected_endpoints"`
+	//ConnectedEndpoints []*string `json:"connected_endpoints"`
 
 	// Connected endpoints reachable
 	// Read Only: true
@@ -124,7 +124,7 @@ type Interface struct {
 	// Return the appropriate serializer for the link termination model.
 	//
 	// Read Only: true
-	LinkPeers []*string `json:"link_peers"`
+	//LinkPeers []*string `json:"link_peers"`
 
 	// Link peers type
 	// Read Only: true
@@ -962,9 +962,9 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateConnectedEndpoints(ctx, formats); err != nil {
-		res = append(res, err)
-	}
+	// if err := m.contextValidateConnectedEndpoints(ctx, formats); err != nil {
+	// 	res = append(res, err)
+	// }
 
 	if err := m.contextValidateConnectedEndpointsReachable(ctx, formats); err != nil {
 		res = append(res, err)
@@ -1014,9 +1014,9 @@ func (m *Interface) ContextValidate(ctx context.Context, formats strfmt.Registry
 		res = append(res, err)
 	}
 
-	if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
-		res = append(res, err)
-	}
+	// if err := m.contextValidateLinkPeers(ctx, formats); err != nil {
+	// 	res = append(res, err)
+	// }
 
 	if err := m.contextValidateLinkPeersType(ctx, formats); err != nil {
 		res = append(res, err)
@@ -1142,14 +1142,14 @@ func (m *Interface) contextValidateCableEnd(ctx context.Context, formats strfmt.
 	return nil
 }
 
-func (m *Interface) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
+// func (m *Interface) contextValidateConnectedEndpoints(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
-		return err
-	}
+// 	if err := validate.ReadOnly(ctx, "connected_endpoints", "body", []*string(m.ConnectedEndpoints)); err != nil {
+// 		return err
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 func (m *Interface) contextValidateConnectedEndpointsReachable(ctx context.Context, formats strfmt.Registry) error {
 
@@ -1287,14 +1287,14 @@ func (m *Interface) contextValidateLastUpdated(ctx context.Context, formats strf
 	return nil
 }
 
-func (m *Interface) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
+// func (m *Interface) contextValidateLinkPeers(ctx context.Context, formats strfmt.Registry) error {
 
-	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
-		return err
-	}
+// 	if err := validate.ReadOnly(ctx, "link_peers", "body", []*string(m.LinkPeers)); err != nil {
+// 		return err
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 func (m *Interface) contextValidateLinkPeersType(ctx context.Context, formats strfmt.Registry) error {
 
