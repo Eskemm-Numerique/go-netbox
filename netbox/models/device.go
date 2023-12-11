@@ -97,6 +97,10 @@ type Device struct {
 	// Max Length: 64
 	Name *string `json:"name,omitempty"`
 
+	// OobIP
+	// Out of band IP
+	OobIP *NestedIPAddress `json:"oob_ip,omitempty"`
+
 	// parent device
 	ParentDevice *NestedDevice `json:"parent_device,omitempty"`
 
@@ -200,6 +204,10 @@ func (m *Device) Validate(formats strfmt.Registry) error {
 	}
 
 	if err := m.validateName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateOobIP(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -444,6 +452,25 @@ func (m *Device) validateName(formats strfmt.Registry) error {
 
 	if err := validate.MaxLength("name", "body", *m.Name, 64); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Device) validateOobIP(formats strfmt.Registry) error {
+	if swag.IsZero(m.OobIP) { // not required
+		return nil
+	}
+
+	if m.OobIP != nil {
+		if err := m.OobIP.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("oob_ip")
+			} else if ce, ok := err.(*errors.CompositeError); ok {
+				return ce.ValidateName("oob_ip")
+			}
+			return err
+		}
 	}
 
 	return nil
