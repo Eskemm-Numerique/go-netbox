@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**CustomFieldFilterLogicValue**](CustomFieldFilterLogicValue.md) |  | [optional] 
-**Label** | Pointer to [**CustomFieldFilterLogicLabel**](CustomFieldFilterLogicLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CustomFieldFilterLogic) GetValue() CustomFieldFilterLogicValue`
+`func (o *CustomFieldFilterLogic) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CustomFieldFilterLogic) GetValueOk() (*CustomFieldFilterLogicValue, bool)`
+`func (o *CustomFieldFilterLogic) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CustomFieldFilterLogic) SetValue(v CustomFieldFilterLogicValue)`
+`func (o *CustomFieldFilterLogic) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *CustomFieldFilterLogic) GetLabel() CustomFieldFilterLogicLabel`
+`func (o *CustomFieldFilterLogic) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *CustomFieldFilterLogic) GetLabelOk() (*CustomFieldFilterLogicLabel, bool)`
+`func (o *CustomFieldFilterLogic) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *CustomFieldFilterLogic) SetLabel(v CustomFieldFilterLogicLabel)`
+`func (o *CustomFieldFilterLogic) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

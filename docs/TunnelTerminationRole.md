@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**PatchedWritableTunnelTerminationRequestRole**](PatchedWritableTunnelTerminationRequestRole.md) |  | [optional] 
-**Label** | Pointer to [**TunnelTerminationRoleLabel**](TunnelTerminationRoleLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;peer&#x60; - Peer * &#x60;hub&#x60; - Hub * &#x60;spoke&#x60; - Spoke | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *TunnelTerminationRole) GetValue() PatchedWritableTunnelTerminationRequestRole`
+`func (o *TunnelTerminationRole) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *TunnelTerminationRole) GetValueOk() (*PatchedWritableTunnelTerminationRequestRole, bool)`
+`func (o *TunnelTerminationRole) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *TunnelTerminationRole) SetValue(v PatchedWritableTunnelTerminationRequestRole)`
+`func (o *TunnelTerminationRole) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *TunnelTerminationRole) GetLabel() TunnelTerminationRoleLabel`
+`func (o *TunnelTerminationRole) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *TunnelTerminationRole) GetLabelOk() (*TunnelTerminationRoleLabel, bool)`
+`func (o *TunnelTerminationRole) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *TunnelTerminationRole) SetLabel(v TunnelTerminationRoleLabel)`
+`func (o *TunnelTerminationRole) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

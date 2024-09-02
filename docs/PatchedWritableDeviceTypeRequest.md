@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | Pointer to [**ManufacturerRequest**](ManufacturerRequest.md) |  | [optional] 
-**DefaultPlatform** | Pointer to [**NullablePlatformRequest**](PlatformRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**DefaultPlatform** | Pointer to [**NullableBriefPlatformRequest**](BriefPlatformRequest.md) |  | [optional] 
 **Model** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
 **UHeight** | Pointer to **float64** |  | [optional] [default to 1.0]
 **ExcludeFromUtilization** | Pointer to **bool** | Devices of this type are excluded when calculating rack utilization. | [optional] 
 **IsFullDepth** | Pointer to **bool** | Device consumes both front and rear rack faces. | [optional] 
-**SubdeviceRole** | Pointer to [**ParentChildStatus1**](ParentChildStatus1.md) |  | [optional] 
-**Airflow** | Pointer to [**DeviceAirflowValue**](DeviceAirflowValue.md) |  | [optional] 
+**SubdeviceRole** | Pointer to **string** | Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child | [optional] 
+**Airflow** | Pointer to **string** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
-**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
+**WeightUnit** | Pointer to **string** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
 **FrontImage** | Pointer to ***os.File** |  | [optional] 
 **RearImage** | Pointer to ***os.File** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -44,20 +44,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *PatchedWritableDeviceTypeRequest) GetManufacturer() ManufacturerRequest`
+`func (o *PatchedWritableDeviceTypeRequest) GetManufacturer() BriefManufacturerRequest`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetManufacturerOk() (*ManufacturerRequest, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedWritableDeviceTypeRequest) SetManufacturer(v ManufacturerRequest)`
+`func (o *PatchedWritableDeviceTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -69,20 +69,20 @@ HasManufacturer returns a boolean if a field has been set.
 
 ### GetDefaultPlatform
 
-`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatform() PlatformRequest`
+`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatform() BriefPlatformRequest`
 
 GetDefaultPlatform returns the DefaultPlatform field if non-nil, zero value otherwise.
 
 ### GetDefaultPlatformOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatformOk() (*PlatformRequest, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatformOk() (*BriefPlatformRequest, bool)`
 
 GetDefaultPlatformOk returns a tuple with the DefaultPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPlatform
 
-`func (o *PatchedWritableDeviceTypeRequest) SetDefaultPlatform(v PlatformRequest)`
+`func (o *PatchedWritableDeviceTypeRequest) SetDefaultPlatform(v BriefPlatformRequest)`
 
 SetDefaultPlatform sets DefaultPlatform field to given value.
 
@@ -254,20 +254,20 @@ HasIsFullDepth returns a boolean if a field has been set.
 
 ### GetSubdeviceRole
 
-`func (o *PatchedWritableDeviceTypeRequest) GetSubdeviceRole() ParentChildStatus1`
+`func (o *PatchedWritableDeviceTypeRequest) GetSubdeviceRole() string`
 
 GetSubdeviceRole returns the SubdeviceRole field if non-nil, zero value otherwise.
 
 ### GetSubdeviceRoleOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetSubdeviceRoleOk() (*ParentChildStatus1, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetSubdeviceRoleOk() (*string, bool)`
 
 GetSubdeviceRoleOk returns a tuple with the SubdeviceRole field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubdeviceRole
 
-`func (o *PatchedWritableDeviceTypeRequest) SetSubdeviceRole(v ParentChildStatus1)`
+`func (o *PatchedWritableDeviceTypeRequest) SetSubdeviceRole(v string)`
 
 SetSubdeviceRole sets SubdeviceRole field to given value.
 
@@ -279,20 +279,20 @@ HasSubdeviceRole returns a boolean if a field has been set.
 
 ### GetAirflow
 
-`func (o *PatchedWritableDeviceTypeRequest) GetAirflow() DeviceAirflowValue`
+`func (o *PatchedWritableDeviceTypeRequest) GetAirflow() string`
 
 GetAirflow returns the Airflow field if non-nil, zero value otherwise.
 
 ### GetAirflowOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetAirflowOk() (*DeviceAirflowValue, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetAirflowOk() (*string, bool)`
 
 GetAirflowOk returns a tuple with the Airflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAirflow
 
-`func (o *PatchedWritableDeviceTypeRequest) SetAirflow(v DeviceAirflowValue)`
+`func (o *PatchedWritableDeviceTypeRequest) SetAirflow(v string)`
 
 SetAirflow sets Airflow field to given value.
 
@@ -339,20 +339,20 @@ HasWeight returns a boolean if a field has been set.
 UnsetWeight ensures that no value is present for Weight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *PatchedWritableDeviceTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
+`func (o *PatchedWritableDeviceTypeRequest) GetWeightUnit() string`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetWeightUnitOk() (*string, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *PatchedWritableDeviceTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
+`func (o *PatchedWritableDeviceTypeRequest) SetWeightUnit(v string)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

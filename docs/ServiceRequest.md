@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**NullableDeviceRequest**](DeviceRequest.md) |  | [optional] 
-**VirtualMachine** | Pointer to [**NullableVirtualMachineRequest**](VirtualMachineRequest.md) |  | [optional] 
+**Device** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
+**VirtualMachine** | Pointer to [**NullableBriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | [optional] 
 **Name** | **string** |  | 
-**Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
+**Protocol** | Pointer to **string** | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | [optional] 
 **Ports** | **[]int32** |  | 
 **Ipaddresses** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *ServiceRequest) GetDevice() DeviceRequest`
+`func (o *ServiceRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ServiceRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *ServiceRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ServiceRequest) SetDevice(v DeviceRequest)`
+`func (o *ServiceRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
@@ -71,20 +71,20 @@ HasDevice returns a boolean if a field has been set.
 UnsetDevice ensures that no value is present for Device, not even an explicit nil
 ### GetVirtualMachine
 
-`func (o *ServiceRequest) GetVirtualMachine() VirtualMachineRequest`
+`func (o *ServiceRequest) GetVirtualMachine() BriefVirtualMachineRequest`
 
 GetVirtualMachine returns the VirtualMachine field if non-nil, zero value otherwise.
 
 ### GetVirtualMachineOk
 
-`func (o *ServiceRequest) GetVirtualMachineOk() (*VirtualMachineRequest, bool)`
+`func (o *ServiceRequest) GetVirtualMachineOk() (*BriefVirtualMachineRequest, bool)`
 
 GetVirtualMachineOk returns a tuple with the VirtualMachine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualMachine
 
-`func (o *ServiceRequest) SetVirtualMachine(v VirtualMachineRequest)`
+`func (o *ServiceRequest) SetVirtualMachine(v BriefVirtualMachineRequest)`
 
 SetVirtualMachine sets VirtualMachine field to given value.
 
@@ -126,20 +126,20 @@ SetName sets Name field to given value.
 
 ### GetProtocol
 
-`func (o *ServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
+`func (o *ServiceRequest) GetProtocol() string`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *ServiceRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool)`
+`func (o *ServiceRequest) GetProtocolOk() (*string, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *ServiceRequest) SetProtocol(v PatchedWritableServiceRequestProtocol)`
+`func (o *ServiceRequest) SetProtocol(v string)`
 
 SetProtocol sets Protocol field to given value.
 

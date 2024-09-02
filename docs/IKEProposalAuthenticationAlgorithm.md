@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**IKEProposalAuthenticationAlgorithmValue**](IKEProposalAuthenticationAlgorithmValue.md) |  | [optional] 
-**Label** | Pointer to [**IKEProposalAuthenticationAlgorithmLabel**](IKEProposalAuthenticationAlgorithmLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;hmac-sha1&#x60; - SHA-1 HMAC * &#x60;hmac-sha256&#x60; - SHA-256 HMAC * &#x60;hmac-sha384&#x60; - SHA-384 HMAC * &#x60;hmac-sha512&#x60; - SHA-512 HMAC * &#x60;hmac-md5&#x60; - MD5 HMAC | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *IKEProposalAuthenticationAlgorithm) GetValue() IKEProposalAuthenticationAlgorithmValue`
+`func (o *IKEProposalAuthenticationAlgorithm) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *IKEProposalAuthenticationAlgorithm) GetValueOk() (*IKEProposalAuthenticationAlgorithmValue, bool)`
+`func (o *IKEProposalAuthenticationAlgorithm) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *IKEProposalAuthenticationAlgorithm) SetValue(v IKEProposalAuthenticationAlgorithmValue)`
+`func (o *IKEProposalAuthenticationAlgorithm) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *IKEProposalAuthenticationAlgorithm) GetLabel() IKEProposalAuthenticationAlgorithmLabel`
+`func (o *IKEProposalAuthenticationAlgorithm) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *IKEProposalAuthenticationAlgorithm) GetLabelOk() (*IKEProposalAuthenticationAlgorithmLabel, bool)`
+`func (o *IKEProposalAuthenticationAlgorithm) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *IKEProposalAuthenticationAlgorithm) SetLabel(v IKEProposalAuthenticationAlgorithmLabel)`
+`func (o *IKEProposalAuthenticationAlgorithm) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

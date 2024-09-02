@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**PowerOutletFeedLegValue**](PowerOutletFeedLegValue.md) |  | [optional] 
-**Label** | Pointer to [**PowerOutletFeedLegLabel**](PowerOutletFeedLegLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;A&#x60; - A * &#x60;B&#x60; - B * &#x60;C&#x60; - C | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *PowerOutletFeedLeg) GetValue() PowerOutletFeedLegValue`
+`func (o *PowerOutletFeedLeg) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *PowerOutletFeedLeg) GetValueOk() (*PowerOutletFeedLegValue, bool)`
+`func (o *PowerOutletFeedLeg) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *PowerOutletFeedLeg) SetValue(v PowerOutletFeedLegValue)`
+`func (o *PowerOutletFeedLeg) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *PowerOutletFeedLeg) GetLabel() PowerOutletFeedLegLabel`
+`func (o *PowerOutletFeedLeg) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *PowerOutletFeedLeg) GetLabelOk() (*PowerOutletFeedLegLabel, bool)`
+`func (o *PowerOutletFeedLeg) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *PowerOutletFeedLeg) SetLabel(v PowerOutletFeedLegLabel)`
+`func (o *PowerOutletFeedLeg) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**WirelessLANAuthCipherValue**](WirelessLANAuthCipherValue.md) |  | [optional] 
-**Label** | Pointer to [**WirelessLANAuthCipherLabel**](WirelessLANAuthCipherLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *WirelessLANAuthCipher) GetValue() WirelessLANAuthCipherValue`
+`func (o *WirelessLANAuthCipher) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *WirelessLANAuthCipher) GetValueOk() (*WirelessLANAuthCipherValue, bool)`
+`func (o *WirelessLANAuthCipher) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *WirelessLANAuthCipher) SetValue(v WirelessLANAuthCipherValue)`
+`func (o *WirelessLANAuthCipher) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *WirelessLANAuthCipher) GetLabel() WirelessLANAuthCipherLabel`
+`func (o *WirelessLANAuthCipher) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *WirelessLANAuthCipher) GetLabelOk() (*WirelessLANAuthCipherLabel, bool)`
+`func (o *WirelessLANAuthCipher) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *WirelessLANAuthCipher) SetLabel(v WirelessLANAuthCipherLabel)`
+`func (o *WirelessLANAuthCipher) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

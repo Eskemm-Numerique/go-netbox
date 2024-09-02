@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**DeviceRequest**](DeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableModuleRequest**](ModuleRequest.md) |  | [optional] 
+**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
-**Type** | Pointer to [**ConsolePortTypeValue**](ConsolePortTypeValue.md) |  | [optional] 
-**Speed** | Pointer to [**NullableConsolePortRequestSpeed**](ConsolePortRequestSpeed.md) |  | [optional] 
+**Type** | Pointer to **string** | * &#x60;de-9&#x60; - DE-9 * &#x60;db-25&#x60; - DB-25 * &#x60;rj-11&#x60; - RJ-11 * &#x60;rj-12&#x60; - RJ-12 * &#x60;rj-45&#x60; - RJ-45 * &#x60;mini-din-8&#x60; - Mini-DIN 8 * &#x60;usb-a&#x60; - USB Type A * &#x60;usb-b&#x60; - USB Type B * &#x60;usb-c&#x60; - USB Type C * &#x60;usb-mini-a&#x60; - USB Mini A * &#x60;usb-mini-b&#x60; - USB Mini B * &#x60;usb-micro-a&#x60; - USB Micro A * &#x60;usb-micro-b&#x60; - USB Micro B * &#x60;usb-micro-ab&#x60; - USB Micro AB * &#x60;other&#x60; - Other | [optional] 
+**Speed** | Pointer to **NullableInt32** | * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewConsoleServerPortRequest
 
-`func NewConsoleServerPortRequest(device DeviceRequest, name string, ) *ConsoleServerPortRequest`
+`func NewConsoleServerPortRequest(device BriefDeviceRequest, name string, ) *ConsoleServerPortRequest`
 
 NewConsoleServerPortRequest instantiates a new ConsoleServerPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,40 +36,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *ConsoleServerPortRequest) GetDevice() DeviceRequest`
+`func (o *ConsoleServerPortRequest) GetDevice() BriefDeviceRequest`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ConsoleServerPortRequest) GetDeviceOk() (*DeviceRequest, bool)`
+`func (o *ConsoleServerPortRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ConsoleServerPortRequest) SetDevice(v DeviceRequest)`
+`func (o *ConsoleServerPortRequest) SetDevice(v BriefDeviceRequest)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *ConsoleServerPortRequest) GetModule() ModuleRequest`
+`func (o *ConsoleServerPortRequest) GetModule() BriefModuleRequest`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *ConsoleServerPortRequest) GetModuleOk() (*ModuleRequest, bool)`
+`func (o *ConsoleServerPortRequest) GetModuleOk() (*BriefModuleRequest, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *ConsoleServerPortRequest) SetModule(v ModuleRequest)`
+`func (o *ConsoleServerPortRequest) SetModule(v BriefModuleRequest)`
 
 SetModule sets Module field to given value.
 
@@ -136,20 +136,20 @@ HasLabel returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ConsoleServerPortRequest) GetType() ConsolePortTypeValue`
+`func (o *ConsoleServerPortRequest) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ConsoleServerPortRequest) GetTypeOk() (*ConsolePortTypeValue, bool)`
+`func (o *ConsoleServerPortRequest) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ConsoleServerPortRequest) SetType(v ConsolePortTypeValue)`
+`func (o *ConsoleServerPortRequest) SetType(v string)`
 
 SetType sets Type field to given value.
 
@@ -161,20 +161,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetSpeed
 
-`func (o *ConsoleServerPortRequest) GetSpeed() ConsolePortRequestSpeed`
+`func (o *ConsoleServerPortRequest) GetSpeed() int32`
 
 GetSpeed returns the Speed field if non-nil, zero value otherwise.
 
 ### GetSpeedOk
 
-`func (o *ConsoleServerPortRequest) GetSpeedOk() (*ConsolePortRequestSpeed, bool)`
+`func (o *ConsoleServerPortRequest) GetSpeedOk() (*int32, bool)`
 
 GetSpeedOk returns a tuple with the Speed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSpeed
 
-`func (o *ConsoleServerPortRequest) SetSpeed(v ConsolePortRequestSpeed)`
+`func (o *ConsoleServerPortRequest) SetSpeed(v int32)`
 
 SetSpeed sets Speed field to given value.
 

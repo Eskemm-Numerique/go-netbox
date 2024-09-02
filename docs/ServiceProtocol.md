@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
-**Label** | Pointer to [**ServiceProtocolLabel**](ServiceProtocolLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *ServiceProtocol) GetValue() PatchedWritableServiceRequestProtocol`
+`func (o *ServiceProtocol) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ServiceProtocol) GetValueOk() (*PatchedWritableServiceRequestProtocol, bool)`
+`func (o *ServiceProtocol) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ServiceProtocol) SetValue(v PatchedWritableServiceRequestProtocol)`
+`func (o *ServiceProtocol) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *ServiceProtocol) GetLabel() ServiceProtocolLabel`
+`func (o *ServiceProtocol) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *ServiceProtocol) GetLabelOk() (*ServiceProtocolLabel, bool)`
+`func (o *ServiceProtocol) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *ServiceProtocol) SetLabel(v ServiceProtocolLabel)`
+`func (o *ServiceProtocol) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

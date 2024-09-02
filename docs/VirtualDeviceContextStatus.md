@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**PatchedWritableVirtualDeviceContextRequestStatus**](PatchedWritableVirtualDeviceContextRequestStatus.md) |  | [optional] 
-**Label** | Pointer to [**VirtualDeviceContextStatusLabel**](VirtualDeviceContextStatusLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;offline&#x60; - Offline | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *VirtualDeviceContextStatus) GetValue() PatchedWritableVirtualDeviceContextRequestStatus`
+`func (o *VirtualDeviceContextStatus) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *VirtualDeviceContextStatus) GetValueOk() (*PatchedWritableVirtualDeviceContextRequestStatus, bool)`
+`func (o *VirtualDeviceContextStatus) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *VirtualDeviceContextStatus) SetValue(v PatchedWritableVirtualDeviceContextRequestStatus)`
+`func (o *VirtualDeviceContextStatus) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *VirtualDeviceContextStatus) GetLabel() VirtualDeviceContextStatusLabel`
+`func (o *VirtualDeviceContextStatus) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *VirtualDeviceContextStatus) GetLabelOk() (*VirtualDeviceContextStatusLabel, bool)`
+`func (o *VirtualDeviceContextStatus) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *VirtualDeviceContextStatus) SetLabel(v VirtualDeviceContextStatusLabel)`
+`func (o *VirtualDeviceContextStatus) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

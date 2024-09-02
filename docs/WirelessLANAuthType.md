@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**WirelessLANAuthTypeValue**](WirelessLANAuthTypeValue.md) |  | [optional] 
-**Label** | Pointer to [**WirelessLANAuthTypeLabel**](WirelessLANAuthTypeLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;open&#x60; - Open * &#x60;wep&#x60; - WEP * &#x60;wpa-personal&#x60; - WPA Personal (PSK) * &#x60;wpa-enterprise&#x60; - WPA Enterprise | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *WirelessLANAuthType) GetValue() WirelessLANAuthTypeValue`
+`func (o *WirelessLANAuthType) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *WirelessLANAuthType) GetValueOk() (*WirelessLANAuthTypeValue, bool)`
+`func (o *WirelessLANAuthType) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *WirelessLANAuthType) SetValue(v WirelessLANAuthTypeValue)`
+`func (o *WirelessLANAuthType) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *WirelessLANAuthType) GetLabel() WirelessLANAuthTypeLabel`
+`func (o *WirelessLANAuthType) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *WirelessLANAuthType) GetLabelOk() (*WirelessLANAuthTypeLabel, bool)`
+`func (o *WirelessLANAuthType) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *WirelessLANAuthType) SetLabel(v WirelessLANAuthTypeLabel)`
+`func (o *WirelessLANAuthType) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

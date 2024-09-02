@@ -29,8 +29,8 @@ import (
 )
 
 func main() {
-	format := openapiclient.schema_retrieve_format_parameter("json") // SchemaRetrieveFormatParameter |  (optional)
-	lang := openapiclient.schema_retrieve_lang_parameter("de") // SchemaRetrieveLangParameter |  (optional)
+	format := "format_example" // string |  (optional)
+	lang := "lang_example" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -55,8 +55,8 @@ Other parameters are passed through a pointer to a apiSchemaRetrieveRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | [**SchemaRetrieveFormatParameter**](SchemaRetrieveFormatParameter.md) |  | 
- **lang** | [**SchemaRetrieveLangParameter**](SchemaRetrieveLangParameter.md) |  | 
+ **format** | **string** |  | 
+ **lang** | **string** |  | 
 
 ### Return type
 

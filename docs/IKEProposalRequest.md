@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**AuthenticationMethod** | [**IKEProposalAuthenticationMethodValue**](IKEProposalAuthenticationMethodValue.md) |  | 
-**EncryptionAlgorithm** | [**IKEProposalEncryptionAlgorithmValue**](IKEProposalEncryptionAlgorithmValue.md) |  | 
-**AuthenticationAlgorithm** | [**IKEProposalAuthenticationAlgorithmValue**](IKEProposalAuthenticationAlgorithmValue.md) |  | 
-**Group** | [**IKEProposalGroupValue**](IKEProposalGroupValue.md) |  | 
+**AuthenticationMethod** | **string** | * &#x60;preshared-keys&#x60; - Pre-shared keys * &#x60;certificates&#x60; - Certificates * &#x60;rsa-signatures&#x60; - RSA signatures * &#x60;dsa-signatures&#x60; - DSA signatures | 
+**EncryptionAlgorithm** | **string** | * &#x60;aes-128-cbc&#x60; - 128-bit AES (CBC) * &#x60;aes-128-gcm&#x60; - 128-bit AES (GCM) * &#x60;aes-192-cbc&#x60; - 192-bit AES (CBC) * &#x60;aes-192-gcm&#x60; - 192-bit AES (GCM) * &#x60;aes-256-cbc&#x60; - 256-bit AES (CBC) * &#x60;aes-256-gcm&#x60; - 256-bit AES (GCM) * &#x60;3des-cbc&#x60; - 3DES * &#x60;des-cbc&#x60; - DES | 
+**AuthenticationAlgorithm** | Pointer to **string** | * &#x60;hmac-sha1&#x60; - SHA-1 HMAC * &#x60;hmac-sha256&#x60; - SHA-256 HMAC * &#x60;hmac-sha384&#x60; - SHA-384 HMAC * &#x60;hmac-sha512&#x60; - SHA-512 HMAC * &#x60;hmac-md5&#x60; - MD5 HMAC | [optional] 
+**Group** | **int32** | * &#x60;1&#x60; - Group 1 * &#x60;2&#x60; - Group 2 * &#x60;5&#x60; - Group 5 * &#x60;14&#x60; - Group 14 * &#x60;15&#x60; - Group 15 * &#x60;16&#x60; - Group 16 * &#x60;17&#x60; - Group 17 * &#x60;18&#x60; - Group 18 * &#x60;19&#x60; - Group 19 * &#x60;20&#x60; - Group 20 * &#x60;21&#x60; - Group 21 * &#x60;22&#x60; - Group 22 * &#x60;23&#x60; - Group 23 * &#x60;24&#x60; - Group 24 * &#x60;25&#x60; - Group 25 * &#x60;26&#x60; - Group 26 * &#x60;27&#x60; - Group 27 * &#x60;28&#x60; - Group 28 * &#x60;29&#x60; - Group 29 * &#x60;30&#x60; - Group 30 * &#x60;31&#x60; - Group 31 * &#x60;32&#x60; - Group 32 * &#x60;33&#x60; - Group 33 * &#x60;34&#x60; - Group 34 | 
 **SaLifetime** | Pointer to **NullableInt32** | Security association lifetime (in seconds) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewIKEProposalRequest
 
-`func NewIKEProposalRequest(name string, authenticationMethod IKEProposalAuthenticationMethodValue, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, authenticationAlgorithm IKEProposalAuthenticationAlgorithmValue, group IKEProposalGroupValue, ) *IKEProposalRequest`
+`func NewIKEProposalRequest(name string, authenticationMethod string, encryptionAlgorithm string, group int32, ) *IKEProposalRequest`
 
 NewIKEProposalRequest instantiates a new IKEProposalRequest object
 This constructor will assign default values to properties that have it defined,
@@ -81,80 +81,85 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetAuthenticationMethod
 
-`func (o *IKEProposalRequest) GetAuthenticationMethod() IKEProposalAuthenticationMethodValue`
+`func (o *IKEProposalRequest) GetAuthenticationMethod() string`
 
 GetAuthenticationMethod returns the AuthenticationMethod field if non-nil, zero value otherwise.
 
 ### GetAuthenticationMethodOk
 
-`func (o *IKEProposalRequest) GetAuthenticationMethodOk() (*IKEProposalAuthenticationMethodValue, bool)`
+`func (o *IKEProposalRequest) GetAuthenticationMethodOk() (*string, bool)`
 
 GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationMethod
 
-`func (o *IKEProposalRequest) SetAuthenticationMethod(v IKEProposalAuthenticationMethodValue)`
+`func (o *IKEProposalRequest) SetAuthenticationMethod(v string)`
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 
 
 ### GetEncryptionAlgorithm
 
-`func (o *IKEProposalRequest) GetEncryptionAlgorithm() IKEProposalEncryptionAlgorithmValue`
+`func (o *IKEProposalRequest) GetEncryptionAlgorithm() string`
 
 GetEncryptionAlgorithm returns the EncryptionAlgorithm field if non-nil, zero value otherwise.
 
 ### GetEncryptionAlgorithmOk
 
-`func (o *IKEProposalRequest) GetEncryptionAlgorithmOk() (*IKEProposalEncryptionAlgorithmValue, bool)`
+`func (o *IKEProposalRequest) GetEncryptionAlgorithmOk() (*string, bool)`
 
 GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncryptionAlgorithm
 
-`func (o *IKEProposalRequest) SetEncryptionAlgorithm(v IKEProposalEncryptionAlgorithmValue)`
+`func (o *IKEProposalRequest) SetEncryptionAlgorithm(v string)`
 
 SetEncryptionAlgorithm sets EncryptionAlgorithm field to given value.
 
 
 ### GetAuthenticationAlgorithm
 
-`func (o *IKEProposalRequest) GetAuthenticationAlgorithm() IKEProposalAuthenticationAlgorithmValue`
+`func (o *IKEProposalRequest) GetAuthenticationAlgorithm() string`
 
 GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field if non-nil, zero value otherwise.
 
 ### GetAuthenticationAlgorithmOk
 
-`func (o *IKEProposalRequest) GetAuthenticationAlgorithmOk() (*IKEProposalAuthenticationAlgorithmValue, bool)`
+`func (o *IKEProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool)`
 
 GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationAlgorithm
 
-`func (o *IKEProposalRequest) SetAuthenticationAlgorithm(v IKEProposalAuthenticationAlgorithmValue)`
+`func (o *IKEProposalRequest) SetAuthenticationAlgorithm(v string)`
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 
+### HasAuthenticationAlgorithm
+
+`func (o *IKEProposalRequest) HasAuthenticationAlgorithm() bool`
+
+HasAuthenticationAlgorithm returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *IKEProposalRequest) GetGroup() IKEProposalGroupValue`
+`func (o *IKEProposalRequest) GetGroup() int32`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *IKEProposalRequest) GetGroupOk() (*IKEProposalGroupValue, bool)`
+`func (o *IKEProposalRequest) GetGroupOk() (*int32, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *IKEProposalRequest) SetGroup(v IKEProposalGroupValue)`
+`func (o *IKEProposalRequest) SetGroup(v int32)`
 
 SetGroup sets Group field to given value.
 

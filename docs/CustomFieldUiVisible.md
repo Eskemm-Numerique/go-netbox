@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**CustomFieldUiVisibleValue**](CustomFieldUiVisibleValue.md) |  | [optional] 
-**Label** | Pointer to [**CustomFieldUiVisibleLabel**](CustomFieldUiVisibleLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;always&#x60; - Always * &#x60;if-set&#x60; - If set * &#x60;hidden&#x60; - Hidden | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CustomFieldUiVisible) GetValue() CustomFieldUiVisibleValue`
+`func (o *CustomFieldUiVisible) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CustomFieldUiVisible) GetValueOk() (*CustomFieldUiVisibleValue, bool)`
+`func (o *CustomFieldUiVisible) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CustomFieldUiVisible) SetValue(v CustomFieldUiVisibleValue)`
+`func (o *CustomFieldUiVisible) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *CustomFieldUiVisible) GetLabel() CustomFieldUiVisibleLabel`
+`func (o *CustomFieldUiVisible) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *CustomFieldUiVisible) GetLabelOk() (*CustomFieldUiVisibleLabel, bool)`
+`func (o *CustomFieldUiVisible) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *CustomFieldUiVisible) SetLabel(v CustomFieldUiVisibleLabel)`
+`func (o *CustomFieldUiVisible) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

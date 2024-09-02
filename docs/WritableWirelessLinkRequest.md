@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InterfaceA** | [**InterfaceRequest**](InterfaceRequest.md) |  | 
-**InterfaceB** | [**InterfaceRequest**](InterfaceRequest.md) |  | 
+**InterfaceA** | [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | 
+**InterfaceB** | [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | 
 **Ssid** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to [**PatchedWritableCableRequestStatus**](PatchedWritableCableRequestStatus.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
-**AuthType** | Pointer to [**AuthenticationType1**](AuthenticationType1.md) |  | [optional] 
-**AuthCipher** | Pointer to [**AuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
+**Status** | Pointer to **string** | * &#x60;connected&#x60; - Connected * &#x60;planned&#x60; - Planned * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**AuthType** | Pointer to **string** | * &#x60;open&#x60; - Open * &#x60;wep&#x60; - WEP * &#x60;wpa-personal&#x60; - WPA Personal (PSK) * &#x60;wpa-enterprise&#x60; - WPA Enterprise | [optional] 
+**AuthCipher** | Pointer to **string** | * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewWritableWirelessLinkRequest
 
-`func NewWritableWirelessLinkRequest(interfaceA InterfaceRequest, interfaceB InterfaceRequest, ) *WritableWirelessLinkRequest`
+`func NewWritableWirelessLinkRequest(interfaceA BriefInterfaceRequest, interfaceB BriefInterfaceRequest, ) *WritableWirelessLinkRequest`
 
 NewWritableWirelessLinkRequest instantiates a new WritableWirelessLinkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,40 +38,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInterfaceA
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceA() InterfaceRequest`
+`func (o *WritableWirelessLinkRequest) GetInterfaceA() BriefInterfaceRequest`
 
 GetInterfaceA returns the InterfaceA field if non-nil, zero value otherwise.
 
 ### GetInterfaceAOk
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceAOk() (*InterfaceRequest, bool)`
+`func (o *WritableWirelessLinkRequest) GetInterfaceAOk() (*BriefInterfaceRequest, bool)`
 
 GetInterfaceAOk returns a tuple with the InterfaceA field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceA
 
-`func (o *WritableWirelessLinkRequest) SetInterfaceA(v InterfaceRequest)`
+`func (o *WritableWirelessLinkRequest) SetInterfaceA(v BriefInterfaceRequest)`
 
 SetInterfaceA sets InterfaceA field to given value.
 
 
 ### GetInterfaceB
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceB() InterfaceRequest`
+`func (o *WritableWirelessLinkRequest) GetInterfaceB() BriefInterfaceRequest`
 
 GetInterfaceB returns the InterfaceB field if non-nil, zero value otherwise.
 
 ### GetInterfaceBOk
 
-`func (o *WritableWirelessLinkRequest) GetInterfaceBOk() (*InterfaceRequest, bool)`
+`func (o *WritableWirelessLinkRequest) GetInterfaceBOk() (*BriefInterfaceRequest, bool)`
 
 GetInterfaceBOk returns a tuple with the InterfaceB field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceB
 
-`func (o *WritableWirelessLinkRequest) SetInterfaceB(v InterfaceRequest)`
+`func (o *WritableWirelessLinkRequest) SetInterfaceB(v BriefInterfaceRequest)`
 
 SetInterfaceB sets InterfaceB field to given value.
 
@@ -103,20 +103,20 @@ HasSsid returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *WritableWirelessLinkRequest) GetStatus() PatchedWritableCableRequestStatus`
+`func (o *WritableWirelessLinkRequest) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableWirelessLinkRequest) GetStatusOk() (*PatchedWritableCableRequestStatus, bool)`
+`func (o *WritableWirelessLinkRequest) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableWirelessLinkRequest) SetStatus(v PatchedWritableCableRequestStatus)`
+`func (o *WritableWirelessLinkRequest) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 
@@ -128,20 +128,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableWirelessLinkRequest) GetTenant() TenantRequest`
+`func (o *WritableWirelessLinkRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableWirelessLinkRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *WritableWirelessLinkRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableWirelessLinkRequest) SetTenant(v TenantRequest)`
+`func (o *WritableWirelessLinkRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 
@@ -163,20 +163,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetAuthType
 
-`func (o *WritableWirelessLinkRequest) GetAuthType() AuthenticationType1`
+`func (o *WritableWirelessLinkRequest) GetAuthType() string`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *WritableWirelessLinkRequest) GetAuthTypeOk() (*AuthenticationType1, bool)`
+`func (o *WritableWirelessLinkRequest) GetAuthTypeOk() (*string, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *WritableWirelessLinkRequest) SetAuthType(v AuthenticationType1)`
+`func (o *WritableWirelessLinkRequest) SetAuthType(v string)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -188,20 +188,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetAuthCipher
 
-`func (o *WritableWirelessLinkRequest) GetAuthCipher() AuthenticationCipher`
+`func (o *WritableWirelessLinkRequest) GetAuthCipher() string`
 
 GetAuthCipher returns the AuthCipher field if non-nil, zero value otherwise.
 
 ### GetAuthCipherOk
 
-`func (o *WritableWirelessLinkRequest) GetAuthCipherOk() (*AuthenticationCipher, bool)`
+`func (o *WritableWirelessLinkRequest) GetAuthCipherOk() (*string, bool)`
 
 GetAuthCipherOk returns a tuple with the AuthCipher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCipher
 
-`func (o *WritableWirelessLinkRequest) SetAuthCipher(v AuthenticationCipher)`
+`func (o *WritableWirelessLinkRequest) SetAuthCipher(v string)`
 
 SetAuthCipher sets AuthCipher field to given value.
 

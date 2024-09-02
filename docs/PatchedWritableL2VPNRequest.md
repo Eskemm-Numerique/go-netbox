@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Identifier** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**L2VPNTypeValue**](L2VPNTypeValue.md) |  | [optional] 
+**Type** | Pointer to **string** | * &#x60;vpws&#x60; - VPWS * &#x60;vpls&#x60; - VPLS * &#x60;vxlan&#x60; - VXLAN * &#x60;vxlan-evpn&#x60; - VXLAN-EVPN * &#x60;mpls-evpn&#x60; - MPLS EVPN * &#x60;pbb-evpn&#x60; - PBB EVPN * &#x60;epl&#x60; - EPL * &#x60;evpl&#x60; - EVPL * &#x60;ep-lan&#x60; - Ethernet Private LAN * &#x60;evp-lan&#x60; - Ethernet Virtual Private LAN * &#x60;ep-tree&#x60; - Ethernet Private Tree * &#x60;evp-tree&#x60; - Ethernet Virtual Private Tree | [optional] 
 **ImportTargets** | Pointer to **[]int32** |  | [optional] 
 **ExportTargets** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableTenantRequest**](TenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -122,20 +122,20 @@ HasSlug returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *PatchedWritableL2VPNRequest) GetType() L2VPNTypeValue`
+`func (o *PatchedWritableL2VPNRequest) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PatchedWritableL2VPNRequest) GetTypeOk() (*L2VPNTypeValue, bool)`
+`func (o *PatchedWritableL2VPNRequest) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PatchedWritableL2VPNRequest) SetType(v L2VPNTypeValue)`
+`func (o *PatchedWritableL2VPNRequest) SetType(v string)`
 
 SetType sets Type field to given value.
 
@@ -247,20 +247,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedWritableL2VPNRequest) GetTenant() TenantRequest`
+`func (o *PatchedWritableL2VPNRequest) GetTenant() BriefTenantRequest`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableL2VPNRequest) GetTenantOk() (*TenantRequest, bool)`
+`func (o *PatchedWritableL2VPNRequest) GetTenantOk() (*BriefTenantRequest, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableL2VPNRequest) SetTenant(v TenantRequest)`
+`func (o *PatchedWritableL2VPNRequest) SetTenant(v BriefTenantRequest)`
 
 SetTenant sets Tenant field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**DeviceFaceValue**](DeviceFaceValue.md) |  | [optional] 
-**Label** | Pointer to [**DeviceFaceLabel**](DeviceFaceLabel.md) |  | [optional] 
+**Value** | Pointer to **string** | * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *DeviceFace) GetValue() DeviceFaceValue`
+`func (o *DeviceFace) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *DeviceFace) GetValueOk() (*DeviceFaceValue, bool)`
+`func (o *DeviceFace) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *DeviceFace) SetValue(v DeviceFaceValue)`
+`func (o *DeviceFace) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *DeviceFace) GetLabel() DeviceFaceLabel`
+`func (o *DeviceFace) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *DeviceFace) GetLabelOk() (*DeviceFaceLabel, bool)`
+`func (o *DeviceFace) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *DeviceFace) SetLabel(v DeviceFaceLabel)`
+`func (o *DeviceFace) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 

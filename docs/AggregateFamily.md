@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to [**AggregateFamilyValue**](AggregateFamilyValue.md) |  | [optional] 
-**Label** | Pointer to [**AggregateFamilyLabel**](AggregateFamilyLabel.md) |  | [optional] 
+**Value** | Pointer to **int32** | * &#x60;4&#x60; - IPv4 * &#x60;6&#x60; - IPv6 | [optional] 
+**Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *AggregateFamily) GetValue() AggregateFamilyValue`
+`func (o *AggregateFamily) GetValue() int32`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *AggregateFamily) GetValueOk() (*AggregateFamilyValue, bool)`
+`func (o *AggregateFamily) GetValueOk() (*int32, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *AggregateFamily) SetValue(v AggregateFamilyValue)`
+`func (o *AggregateFamily) SetValue(v int32)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *AggregateFamily) GetLabel() AggregateFamilyLabel`
+`func (o *AggregateFamily) GetLabel() string`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *AggregateFamily) GetLabelOk() (*AggregateFamilyLabel, bool)`
+`func (o *AggregateFamily) GetLabelOk() (*string, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *AggregateFamily) SetLabel(v AggregateFamilyLabel)`
+`func (o *AggregateFamily) SetLabel(v string)`
 
 SetLabel sets Label field to given value.
 
