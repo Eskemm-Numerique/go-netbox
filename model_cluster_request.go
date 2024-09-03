@@ -23,8 +23,7 @@ type ClusterRequest struct {
 	Name string `json:"name"`
 	Type BriefClusterTypeRequest `json:"type"`
 	Group NullableBriefClusterGroupRequest `json:"group,omitempty"`
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `offline` - Offline
-	Status *string `json:"status,omitempty"`
+	Status *ClusterStatusValue `json:"status,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	Site NullableBriefSiteRequest `json:"site,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -146,9 +145,9 @@ func (o *ClusterRequest) UnsetGroup() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ClusterRequest) GetStatus() string {
+func (o *ClusterRequest) GetStatus() ClusterStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret ClusterStatusValue
 		return ret
 	}
 	return *o.Status
@@ -156,7 +155,7 @@ func (o *ClusterRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterRequest) GetStatusOk() (*string, bool) {
+func (o *ClusterRequest) GetStatusOk() (*ClusterStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -172,8 +171,8 @@ func (o *ClusterRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *ClusterRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given ClusterStatusValue and assigns it to the Status field.
+func (o *ClusterRequest) SetStatus(v ClusterStatusValue) {
 	o.Status = &v
 }
 

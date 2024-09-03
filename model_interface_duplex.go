@@ -19,9 +19,8 @@ var _ MappedNullable = &InterfaceDuplex{}
 
 // InterfaceDuplex struct for InterfaceDuplex
 type InterfaceDuplex struct {
-	// * `half` - Half * `full` - Full * `auto` - Auto
-	Value *string `json:"value,omitempty"`
-	Label *string `json:"label,omitempty"`
+	Value *InterfaceDuplexValue `json:"value,omitempty"`
+	Label *InterfaceDuplexLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewInterfaceDuplexWithDefaults() *InterfaceDuplex {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *InterfaceDuplex) GetValue() string {
+func (o *InterfaceDuplex) GetValue() InterfaceDuplexValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret InterfaceDuplexValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *InterfaceDuplex) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceDuplex) GetValueOk() (*string, bool) {
+func (o *InterfaceDuplex) GetValueOk() (*InterfaceDuplexValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *InterfaceDuplex) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *InterfaceDuplex) SetValue(v string) {
+// SetValue gets a reference to the given InterfaceDuplexValue and assigns it to the Value field.
+func (o *InterfaceDuplex) SetValue(v InterfaceDuplexValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *InterfaceDuplex) GetLabel() string {
+func (o *InterfaceDuplex) GetLabel() InterfaceDuplexLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret InterfaceDuplexLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *InterfaceDuplex) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceDuplex) GetLabelOk() (*string, bool) {
+func (o *InterfaceDuplex) GetLabelOk() (*InterfaceDuplexLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *InterfaceDuplex) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *InterfaceDuplex) SetLabel(v string) {
+// SetLabel gets a reference to the given InterfaceDuplexLabel and assigns it to the Label field.
+func (o *InterfaceDuplex) SetLabel(v InterfaceDuplexLabel) {
 	o.Label = &v
 }
 

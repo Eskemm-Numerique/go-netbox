@@ -20,11 +20,9 @@ var _ MappedNullable = &PatchedWritableTunnelRequest{}
 // PatchedWritableTunnelRequest Adds support for custom fields and tags.
 type PatchedWritableTunnelRequest struct {
 	Name *string `json:"name,omitempty"`
-	// * `planned` - Planned * `active` - Active * `disabled` - Disabled
-	Status *string `json:"status,omitempty"`
+	Status *PatchedWritableTunnelRequestStatus `json:"status,omitempty"`
 	Group NullableBriefTunnelGroupRequest `json:"group,omitempty"`
-	// * `ipsec-transport` - IPsec - Transport * `ipsec-tunnel` - IPsec - Tunnel * `ip-ip` - IP-in-IP * `gre` - GRE
-	Encapsulation *string `json:"encapsulation,omitempty"`
+	Encapsulation *PatchedWritableTunnelRequestEncapsulation `json:"encapsulation,omitempty"`
 	IpsecProfile NullableBriefIPSecProfileRequest `json:"ipsec_profile,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	TunnelId NullableInt64 `json:"tunnel_id,omitempty"`
@@ -87,9 +85,9 @@ func (o *PatchedWritableTunnelRequest) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableTunnelRequest) GetStatus() string {
+func (o *PatchedWritableTunnelRequest) GetStatus() PatchedWritableTunnelRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableTunnelRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -97,7 +95,7 @@ func (o *PatchedWritableTunnelRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableTunnelRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableTunnelRequest) GetStatusOk() (*PatchedWritableTunnelRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -113,8 +111,8 @@ func (o *PatchedWritableTunnelRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableTunnelRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableTunnelRequestStatus and assigns it to the Status field.
+func (o *PatchedWritableTunnelRequest) SetStatus(v PatchedWritableTunnelRequestStatus) {
 	o.Status = &v
 }
 
@@ -161,9 +159,9 @@ func (o *PatchedWritableTunnelRequest) UnsetGroup() {
 }
 
 // GetEncapsulation returns the Encapsulation field value if set, zero value otherwise.
-func (o *PatchedWritableTunnelRequest) GetEncapsulation() string {
+func (o *PatchedWritableTunnelRequest) GetEncapsulation() PatchedWritableTunnelRequestEncapsulation {
 	if o == nil || IsNil(o.Encapsulation) {
-		var ret string
+		var ret PatchedWritableTunnelRequestEncapsulation
 		return ret
 	}
 	return *o.Encapsulation
@@ -171,7 +169,7 @@ func (o *PatchedWritableTunnelRequest) GetEncapsulation() string {
 
 // GetEncapsulationOk returns a tuple with the Encapsulation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableTunnelRequest) GetEncapsulationOk() (*string, bool) {
+func (o *PatchedWritableTunnelRequest) GetEncapsulationOk() (*PatchedWritableTunnelRequestEncapsulation, bool) {
 	if o == nil || IsNil(o.Encapsulation) {
 		return nil, false
 	}
@@ -187,8 +185,8 @@ func (o *PatchedWritableTunnelRequest) HasEncapsulation() bool {
 	return false
 }
 
-// SetEncapsulation gets a reference to the given string and assigns it to the Encapsulation field.
-func (o *PatchedWritableTunnelRequest) SetEncapsulation(v string) {
+// SetEncapsulation gets a reference to the given PatchedWritableTunnelRequestEncapsulation and assigns it to the Encapsulation field.
+func (o *PatchedWritableTunnelRequest) SetEncapsulation(v PatchedWritableTunnelRequestEncapsulation) {
 	o.Encapsulation = &v
 }
 

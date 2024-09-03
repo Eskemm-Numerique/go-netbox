@@ -22,8 +22,7 @@ var _ MappedNullable = &WritableCustomFieldChoiceSetRequest{}
 type WritableCustomFieldChoiceSetRequest struct {
 	Name string `json:"name"`
 	Description *string `json:"description,omitempty"`
-	// Base set of predefined choices (optional)  * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
-	BaseChoices *string `json:"base_choices,omitempty"`
+	BaseChoices *PatchedWritableCustomFieldChoiceSetRequestBaseChoices `json:"base_choices,omitempty"`
 	ExtraChoices [][]interface{} `json:"extra_choices"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically *bool `json:"order_alphabetically,omitempty"`
@@ -108,9 +107,9 @@ func (o *WritableCustomFieldChoiceSetRequest) SetDescription(v string) {
 }
 
 // GetBaseChoices returns the BaseChoices field value if set, zero value otherwise.
-func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoices() string {
+func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoices() PatchedWritableCustomFieldChoiceSetRequestBaseChoices {
 	if o == nil || IsNil(o.BaseChoices) {
-		var ret string
+		var ret PatchedWritableCustomFieldChoiceSetRequestBaseChoices
 		return ret
 	}
 	return *o.BaseChoices
@@ -118,7 +117,7 @@ func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoices() string {
 
 // GetBaseChoicesOk returns a tuple with the BaseChoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoicesOk() (*string, bool) {
+func (o *WritableCustomFieldChoiceSetRequest) GetBaseChoicesOk() (*PatchedWritableCustomFieldChoiceSetRequestBaseChoices, bool) {
 	if o == nil || IsNil(o.BaseChoices) {
 		return nil, false
 	}
@@ -134,8 +133,8 @@ func (o *WritableCustomFieldChoiceSetRequest) HasBaseChoices() bool {
 	return false
 }
 
-// SetBaseChoices gets a reference to the given string and assigns it to the BaseChoices field.
-func (o *WritableCustomFieldChoiceSetRequest) SetBaseChoices(v string) {
+// SetBaseChoices gets a reference to the given PatchedWritableCustomFieldChoiceSetRequestBaseChoices and assigns it to the BaseChoices field.
+func (o *WritableCustomFieldChoiceSetRequest) SetBaseChoices(v PatchedWritableCustomFieldChoiceSetRequestBaseChoices) {
 	o.BaseChoices = &v
 }
 

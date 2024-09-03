@@ -34,8 +34,7 @@ type PatchedWritableEventRuleRequest struct {
 	Enabled *bool `json:"enabled,omitempty"`
 	// A set of conditions which determine whether the event will be generated.
 	Conditions interface{} `json:"conditions,omitempty"`
-	// * `webhook` - Webhook * `script` - Script
-	ActionType *string `json:"action_type,omitempty"`
+	ActionType *EventRuleActionTypeValue `json:"action_type,omitempty"`
 	ActionObjectType *string `json:"action_object_type,omitempty"`
 	ActionObjectId NullableInt64 `json:"action_object_id,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -353,9 +352,9 @@ func (o *PatchedWritableEventRuleRequest) SetConditions(v interface{}) {
 }
 
 // GetActionType returns the ActionType field value if set, zero value otherwise.
-func (o *PatchedWritableEventRuleRequest) GetActionType() string {
+func (o *PatchedWritableEventRuleRequest) GetActionType() EventRuleActionTypeValue {
 	if o == nil || IsNil(o.ActionType) {
-		var ret string
+		var ret EventRuleActionTypeValue
 		return ret
 	}
 	return *o.ActionType
@@ -363,7 +362,7 @@ func (o *PatchedWritableEventRuleRequest) GetActionType() string {
 
 // GetActionTypeOk returns a tuple with the ActionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableEventRuleRequest) GetActionTypeOk() (*string, bool) {
+func (o *PatchedWritableEventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool) {
 	if o == nil || IsNil(o.ActionType) {
 		return nil, false
 	}
@@ -379,8 +378,8 @@ func (o *PatchedWritableEventRuleRequest) HasActionType() bool {
 	return false
 }
 
-// SetActionType gets a reference to the given string and assigns it to the ActionType field.
-func (o *PatchedWritableEventRuleRequest) SetActionType(v string) {
+// SetActionType gets a reference to the given EventRuleActionTypeValue and assigns it to the ActionType field.
+func (o *PatchedWritableEventRuleRequest) SetActionType(v EventRuleActionTypeValue) {
 	o.ActionType = &v
 }
 

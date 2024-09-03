@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceTypeSubdeviceRole{}
 
 // DeviceTypeSubdeviceRole struct for DeviceTypeSubdeviceRole
 type DeviceTypeSubdeviceRole struct {
-	// * `parent` - Parent * `child` - Child
-	Value *string `json:"value,omitempty"`
-	Label *string `json:"label,omitempty"`
+	Value *DeviceTypeSubdeviceRoleValue `json:"value,omitempty"`
+	Label *DeviceTypeSubdeviceRoleLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDeviceTypeSubdeviceRoleWithDefaults() *DeviceTypeSubdeviceRole {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DeviceTypeSubdeviceRole) GetValue() string {
+func (o *DeviceTypeSubdeviceRole) GetValue() DeviceTypeSubdeviceRoleValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DeviceTypeSubdeviceRoleValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DeviceTypeSubdeviceRole) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeSubdeviceRole) GetValueOk() (*string, bool) {
+func (o *DeviceTypeSubdeviceRole) GetValueOk() (*DeviceTypeSubdeviceRoleValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DeviceTypeSubdeviceRole) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DeviceTypeSubdeviceRole) SetValue(v string) {
+// SetValue gets a reference to the given DeviceTypeSubdeviceRoleValue and assigns it to the Value field.
+func (o *DeviceTypeSubdeviceRole) SetValue(v DeviceTypeSubdeviceRoleValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceTypeSubdeviceRole) GetLabel() string {
+func (o *DeviceTypeSubdeviceRole) GetLabel() DeviceTypeSubdeviceRoleLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceTypeSubdeviceRoleLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DeviceTypeSubdeviceRole) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeSubdeviceRole) GetLabelOk() (*string, bool) {
+func (o *DeviceTypeSubdeviceRole) GetLabelOk() (*DeviceTypeSubdeviceRoleLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DeviceTypeSubdeviceRole) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceTypeSubdeviceRole) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceTypeSubdeviceRoleLabel and assigns it to the Label field.
+func (o *DeviceTypeSubdeviceRole) SetLabel(v DeviceTypeSubdeviceRoleLabel) {
 	o.Label = &v
 }
 

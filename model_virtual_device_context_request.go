@@ -26,8 +26,7 @@ type VirtualDeviceContextRequest struct {
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	PrimaryIp4 NullableBriefIPAddressRequest `json:"primary_ip4,omitempty"`
 	PrimaryIp6 NullableBriefIPAddressRequest `json:"primary_ip6,omitempty"`
-	// * `active` - Active * `planned` - Planned * `offline` - Offline
-	Status string `json:"status"`
+	Status PatchedWritableVirtualDeviceContextRequestStatus `json:"status"`
 	Description *string `json:"description,omitempty"`
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
@@ -41,7 +40,7 @@ type _VirtualDeviceContextRequest VirtualDeviceContextRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualDeviceContextRequest(name string, device BriefDeviceRequest, status string) *VirtualDeviceContextRequest {
+func NewVirtualDeviceContextRequest(name string, device BriefDeviceRequest, status PatchedWritableVirtualDeviceContextRequestStatus) *VirtualDeviceContextRequest {
 	this := VirtualDeviceContextRequest{}
 	this.Name = name
 	this.Device = device
@@ -274,9 +273,9 @@ func (o *VirtualDeviceContextRequest) UnsetPrimaryIp6() {
 }
 
 // GetStatus returns the Status field value
-func (o *VirtualDeviceContextRequest) GetStatus() string {
+func (o *VirtualDeviceContextRequest) GetStatus() PatchedWritableVirtualDeviceContextRequestStatus {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableVirtualDeviceContextRequestStatus
 		return ret
 	}
 
@@ -285,7 +284,7 @@ func (o *VirtualDeviceContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
-func (o *VirtualDeviceContextRequest) GetStatusOk() (*string, bool) {
+func (o *VirtualDeviceContextRequest) GetStatusOk() (*PatchedWritableVirtualDeviceContextRequestStatus, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -293,7 +292,7 @@ func (o *VirtualDeviceContextRequest) GetStatusOk() (*string, bool) {
 }
 
 // SetStatus sets field value
-func (o *VirtualDeviceContextRequest) SetStatus(v string) {
+func (o *VirtualDeviceContextRequest) SetStatus(v PatchedWritableVirtualDeviceContextRequestStatus) {
 	o.Status = v
 }
 

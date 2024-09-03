@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceTypeWeightUnit{}
 
 // DeviceTypeWeightUnit struct for DeviceTypeWeightUnit
 type DeviceTypeWeightUnit struct {
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	Value *string `json:"value,omitempty"`
-	Label *string `json:"label,omitempty"`
+	Value *DeviceTypeWeightUnitValue `json:"value,omitempty"`
+	Label *DeviceTypeWeightUnitLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDeviceTypeWeightUnitWithDefaults() *DeviceTypeWeightUnit {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DeviceTypeWeightUnit) GetValue() string {
+func (o *DeviceTypeWeightUnit) GetValue() DeviceTypeWeightUnitValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DeviceTypeWeightUnitValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DeviceTypeWeightUnit) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeWeightUnit) GetValueOk() (*string, bool) {
+func (o *DeviceTypeWeightUnit) GetValueOk() (*DeviceTypeWeightUnitValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DeviceTypeWeightUnit) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DeviceTypeWeightUnit) SetValue(v string) {
+// SetValue gets a reference to the given DeviceTypeWeightUnitValue and assigns it to the Value field.
+func (o *DeviceTypeWeightUnit) SetValue(v DeviceTypeWeightUnitValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceTypeWeightUnit) GetLabel() string {
+func (o *DeviceTypeWeightUnit) GetLabel() DeviceTypeWeightUnitLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceTypeWeightUnitLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DeviceTypeWeightUnit) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeWeightUnit) GetLabelOk() (*string, bool) {
+func (o *DeviceTypeWeightUnit) GetLabelOk() (*DeviceTypeWeightUnitLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DeviceTypeWeightUnit) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceTypeWeightUnit) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceTypeWeightUnitLabel and assigns it to the Label field.
+func (o *DeviceTypeWeightUnit) SetLabel(v DeviceTypeWeightUnitLabel) {
 	o.Label = &v
 }
 

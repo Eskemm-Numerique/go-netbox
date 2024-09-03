@@ -25,8 +25,7 @@ type PrefixRequest struct {
 	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	Vlan NullableBriefVLANRequest `json:"vlan,omitempty"`
-	// * `container` - Container * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status *string `json:"status,omitempty"`
+	Status *PrefixStatusValue `json:"status,omitempty"`
 	Role NullableBriefRoleRequest `json:"role,omitempty"`
 	// All IP addresses within this prefix are considered usable
 	IsPool *bool `json:"is_pool,omitempty"`
@@ -252,9 +251,9 @@ func (o *PrefixRequest) UnsetVlan() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PrefixRequest) GetStatus() string {
+func (o *PrefixRequest) GetStatus() PrefixStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PrefixStatusValue
 		return ret
 	}
 	return *o.Status
@@ -262,7 +261,7 @@ func (o *PrefixRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrefixRequest) GetStatusOk() (*string, bool) {
+func (o *PrefixRequest) GetStatusOk() (*PrefixStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -278,8 +277,8 @@ func (o *PrefixRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PrefixRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PrefixStatusValue and assigns it to the Status field.
+func (o *PrefixRequest) SetStatus(v PrefixStatusValue) {
 	o.Status = &v
 }
 

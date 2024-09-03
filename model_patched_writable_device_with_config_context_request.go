@@ -32,16 +32,13 @@ type PatchedWritableDeviceWithConfigContextRequest struct {
 	Location NullableBriefLocationRequest `json:"location,omitempty"`
 	Rack NullableBriefRackRequest `json:"rack,omitempty"`
 	Position NullableFloat64 `json:"position,omitempty"`
-	// * `front` - Front * `rear` - Rear
-	Face *string `json:"face,omitempty"`
+	Face *RackFace1 `json:"face,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Longitude NullableFloat64 `json:"longitude,omitempty"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `inventory` - Inventory * `decommissioning` - Decommissioning
-	Status *string `json:"status,omitempty"`
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed
-	Airflow *string `json:"airflow,omitempty"`
+	Status *DeviceStatusValue `json:"status,omitempty"`
+	Airflow *DeviceAirflowValue `json:"airflow,omitempty"`
 	PrimaryIp4 NullableBriefIPAddressRequest `json:"primary_ip4,omitempty"`
 	PrimaryIp6 NullableBriefIPAddressRequest `json:"primary_ip6,omitempty"`
 	OobIp NullableBriefIPAddressRequest `json:"oob_ip,omitempty"`
@@ -502,9 +499,9 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) UnsetPosition() {
 }
 
 // GetFace returns the Face field value if set, zero value otherwise.
-func (o *PatchedWritableDeviceWithConfigContextRequest) GetFace() string {
+func (o *PatchedWritableDeviceWithConfigContextRequest) GetFace() RackFace1 {
 	if o == nil || IsNil(o.Face) {
-		var ret string
+		var ret RackFace1
 		return ret
 	}
 	return *o.Face
@@ -512,7 +509,7 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) GetFace() string {
 
 // GetFaceOk returns a tuple with the Face field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableDeviceWithConfigContextRequest) GetFaceOk() (*string, bool) {
+func (o *PatchedWritableDeviceWithConfigContextRequest) GetFaceOk() (*RackFace1, bool) {
 	if o == nil || IsNil(o.Face) {
 		return nil, false
 	}
@@ -528,8 +525,8 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) HasFace() bool {
 	return false
 }
 
-// SetFace gets a reference to the given string and assigns it to the Face field.
-func (o *PatchedWritableDeviceWithConfigContextRequest) SetFace(v string) {
+// SetFace gets a reference to the given RackFace1 and assigns it to the Face field.
+func (o *PatchedWritableDeviceWithConfigContextRequest) SetFace(v RackFace1) {
 	o.Face = &v
 }
 
@@ -618,9 +615,9 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) UnsetLongitude() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableDeviceWithConfigContextRequest) GetStatus() string {
+func (o *PatchedWritableDeviceWithConfigContextRequest) GetStatus() DeviceStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret DeviceStatusValue
 		return ret
 	}
 	return *o.Status
@@ -628,7 +625,7 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableDeviceWithConfigContextRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableDeviceWithConfigContextRequest) GetStatusOk() (*DeviceStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -644,15 +641,15 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableDeviceWithConfigContextRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given DeviceStatusValue and assigns it to the Status field.
+func (o *PatchedWritableDeviceWithConfigContextRequest) SetStatus(v DeviceStatusValue) {
 	o.Status = &v
 }
 
 // GetAirflow returns the Airflow field value if set, zero value otherwise.
-func (o *PatchedWritableDeviceWithConfigContextRequest) GetAirflow() string {
+func (o *PatchedWritableDeviceWithConfigContextRequest) GetAirflow() DeviceAirflowValue {
 	if o == nil || IsNil(o.Airflow) {
-		var ret string
+		var ret DeviceAirflowValue
 		return ret
 	}
 	return *o.Airflow
@@ -660,7 +657,7 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) GetAirflow() string {
 
 // GetAirflowOk returns a tuple with the Airflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableDeviceWithConfigContextRequest) GetAirflowOk() (*string, bool) {
+func (o *PatchedWritableDeviceWithConfigContextRequest) GetAirflowOk() (*DeviceAirflowValue, bool) {
 	if o == nil || IsNil(o.Airflow) {
 		return nil, false
 	}
@@ -676,8 +673,8 @@ func (o *PatchedWritableDeviceWithConfigContextRequest) HasAirflow() bool {
 	return false
 }
 
-// SetAirflow gets a reference to the given string and assigns it to the Airflow field.
-func (o *PatchedWritableDeviceWithConfigContextRequest) SetAirflow(v string) {
+// SetAirflow gets a reference to the given DeviceAirflowValue and assigns it to the Airflow field.
+func (o *PatchedWritableDeviceWithConfigContextRequest) SetAirflow(v DeviceAirflowValue) {
 	o.Airflow = &v
 }
 

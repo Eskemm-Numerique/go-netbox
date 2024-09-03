@@ -21,8 +21,7 @@ var _ MappedNullable = &DataSourceRequest{}
 // DataSourceRequest Adds support for custom fields and tags.
 type DataSourceRequest struct {
 	Name string `json:"name"`
-	// * `None` - --------- * `local` - Local * `git` - Git * `amazon-s3` - Amazon S3
-	Type string `json:"type"`
+	Type DataSourceTypeValue `json:"type"`
 	SourceUrl string `json:"source_url"`
 	Enabled *bool `json:"enabled,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -40,7 +39,7 @@ type _DataSourceRequest DataSourceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataSourceRequest(name string, type_ string, sourceUrl string) *DataSourceRequest {
+func NewDataSourceRequest(name string, type_ DataSourceTypeValue, sourceUrl string) *DataSourceRequest {
 	this := DataSourceRequest{}
 	this.Name = name
 	this.Type = type_
@@ -81,9 +80,9 @@ func (o *DataSourceRequest) SetName(v string) {
 }
 
 // GetType returns the Type field value
-func (o *DataSourceRequest) GetType() string {
+func (o *DataSourceRequest) GetType() DataSourceTypeValue {
 	if o == nil {
-		var ret string
+		var ret DataSourceTypeValue
 		return ret
 	}
 
@@ -92,7 +91,7 @@ func (o *DataSourceRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *DataSourceRequest) GetTypeOk() (*string, bool) {
+func (o *DataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,7 +99,7 @@ func (o *DataSourceRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *DataSourceRequest) SetType(v string) {
+func (o *DataSourceRequest) SetType(v DataSourceTypeValue) {
 	o.Type = v
 }
 

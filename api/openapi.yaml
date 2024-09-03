@@ -102127,7 +102127,7 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
+      #- cluster_count
       - display
       - id
       - name
@@ -102194,7 +102194,7 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
+      # - cluster_count
       - display
       - id
       - name
@@ -105955,7 +105955,7 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
+      #- cluster_count
       - created
       - display
       - id
@@ -106090,7 +106090,7 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
+      # - cluster_count
       - created
       - display
       - id

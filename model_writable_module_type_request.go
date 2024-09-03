@@ -25,8 +25,7 @@ type WritableModuleTypeRequest struct {
 	// Discrete part number (optional)
 	PartNumber *string `json:"part_number,omitempty"`
 	Weight NullableFloat64 `json:"weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit *string `json:"weight_unit,omitempty"`
+	WeightUnit *DeviceTypeWeightUnitValue `json:"weight_unit,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
@@ -178,9 +177,9 @@ func (o *WritableModuleTypeRequest) UnsetWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise.
-func (o *WritableModuleTypeRequest) GetWeightUnit() string {
+func (o *WritableModuleTypeRequest) GetWeightUnit() DeviceTypeWeightUnitValue {
 	if o == nil || IsNil(o.WeightUnit) {
-		var ret string
+		var ret DeviceTypeWeightUnitValue
 		return ret
 	}
 	return *o.WeightUnit
@@ -188,7 +187,7 @@ func (o *WritableModuleTypeRequest) GetWeightUnit() string {
 
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableModuleTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *WritableModuleTypeRequest) GetWeightUnitOk() (*DeviceTypeWeightUnitValue, bool) {
 	if o == nil || IsNil(o.WeightUnit) {
 		return nil, false
 	}
@@ -204,8 +203,8 @@ func (o *WritableModuleTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given string and assigns it to the WeightUnit field.
-func (o *WritableModuleTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given DeviceTypeWeightUnitValue and assigns it to the WeightUnit field.
+func (o *WritableModuleTypeRequest) SetWeightUnit(v DeviceTypeWeightUnitValue) {
 	o.WeightUnit = &v
 }
 

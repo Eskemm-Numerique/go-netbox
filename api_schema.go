@@ -25,16 +25,16 @@ type SchemaAPIService service
 type ApiSchemaRetrieveRequest struct {
 	ctx context.Context
 	ApiService *SchemaAPIService
-	format *string
-	lang *string
+	format *SchemaRetrieveFormatParameter
+	lang *SchemaRetrieveLangParameter
 }
 
-func (r ApiSchemaRetrieveRequest) Format(format string) ApiSchemaRetrieveRequest {
+func (r ApiSchemaRetrieveRequest) Format(format SchemaRetrieveFormatParameter) ApiSchemaRetrieveRequest {
 	r.format = &format
 	return r
 }
 
-func (r ApiSchemaRetrieveRequest) Lang(lang string) ApiSchemaRetrieveRequest {
+func (r ApiSchemaRetrieveRequest) Lang(lang SchemaRetrieveLangParameter) ApiSchemaRetrieveRequest {
 	r.lang = &lang
 	return r
 }

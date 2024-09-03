@@ -22,14 +22,11 @@ type PatchedWritableWirelessLANRequest struct {
 	Ssid *string `json:"ssid,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Group NullableBriefWirelessLANGroupRequest `json:"group,omitempty"`
-	// * `active` - Active * `reserved` - Reserved * `disabled` - Disabled * `deprecated` - Deprecated
-	Status *string `json:"status,omitempty"`
+	Status *PatchedWritableWirelessLANRequestStatus `json:"status,omitempty"`
 	Vlan NullableBriefVLANRequest `json:"vlan,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	// * `open` - Open * `wep` - WEP * `wpa-personal` - WPA Personal (PSK) * `wpa-enterprise` - WPA Enterprise
-	AuthType *string `json:"auth_type,omitempty"`
-	// * `auto` - Auto * `tkip` - TKIP * `aes` - AES
-	AuthCipher *string `json:"auth_cipher,omitempty"`
+	AuthType *AuthenticationType1 `json:"auth_type,omitempty"`
+	AuthCipher *AuthenticationCipher `json:"auth_cipher,omitempty"`
 	AuthPsk *string `json:"auth_psk,omitempty"`
 	Comments *string `json:"comments,omitempty"`
 	Tags []NestedTagRequest `json:"tags,omitempty"`
@@ -163,9 +160,9 @@ func (o *PatchedWritableWirelessLANRequest) UnsetGroup() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableWirelessLANRequest) GetStatus() string {
+func (o *PatchedWritableWirelessLANRequest) GetStatus() PatchedWritableWirelessLANRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableWirelessLANRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -173,7 +170,7 @@ func (o *PatchedWritableWirelessLANRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableWirelessLANRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableWirelessLANRequest) GetStatusOk() (*PatchedWritableWirelessLANRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -189,8 +186,8 @@ func (o *PatchedWritableWirelessLANRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableWirelessLANRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableWirelessLANRequestStatus and assigns it to the Status field.
+func (o *PatchedWritableWirelessLANRequest) SetStatus(v PatchedWritableWirelessLANRequestStatus) {
 	o.Status = &v
 }
 
@@ -279,9 +276,9 @@ func (o *PatchedWritableWirelessLANRequest) UnsetTenant() {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *PatchedWritableWirelessLANRequest) GetAuthType() string {
+func (o *PatchedWritableWirelessLANRequest) GetAuthType() AuthenticationType1 {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret AuthenticationType1
 		return ret
 	}
 	return *o.AuthType
@@ -289,7 +286,7 @@ func (o *PatchedWritableWirelessLANRequest) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableWirelessLANRequest) GetAuthTypeOk() (*string, bool) {
+func (o *PatchedWritableWirelessLANRequest) GetAuthTypeOk() (*AuthenticationType1, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -305,15 +302,15 @@ func (o *PatchedWritableWirelessLANRequest) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *PatchedWritableWirelessLANRequest) SetAuthType(v string) {
+// SetAuthType gets a reference to the given AuthenticationType1 and assigns it to the AuthType field.
+func (o *PatchedWritableWirelessLANRequest) SetAuthType(v AuthenticationType1) {
 	o.AuthType = &v
 }
 
 // GetAuthCipher returns the AuthCipher field value if set, zero value otherwise.
-func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() string {
+func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() AuthenticationCipher {
 	if o == nil || IsNil(o.AuthCipher) {
-		var ret string
+		var ret AuthenticationCipher
 		return ret
 	}
 	return *o.AuthCipher
@@ -321,7 +318,7 @@ func (o *PatchedWritableWirelessLANRequest) GetAuthCipher() string {
 
 // GetAuthCipherOk returns a tuple with the AuthCipher field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableWirelessLANRequest) GetAuthCipherOk() (*string, bool) {
+func (o *PatchedWritableWirelessLANRequest) GetAuthCipherOk() (*AuthenticationCipher, bool) {
 	if o == nil || IsNil(o.AuthCipher) {
 		return nil, false
 	}
@@ -337,8 +334,8 @@ func (o *PatchedWritableWirelessLANRequest) HasAuthCipher() bool {
 	return false
 }
 
-// SetAuthCipher gets a reference to the given string and assigns it to the AuthCipher field.
-func (o *PatchedWritableWirelessLANRequest) SetAuthCipher(v string) {
+// SetAuthCipher gets a reference to the given AuthenticationCipher and assigns it to the AuthCipher field.
+func (o *PatchedWritableWirelessLANRequest) SetAuthCipher(v AuthenticationCipher) {
 	o.AuthCipher = &v
 }
 

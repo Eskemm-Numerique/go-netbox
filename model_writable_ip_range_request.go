@@ -24,8 +24,7 @@ type WritableIPRangeRequest struct {
 	EndAddress string `json:"end_address"`
 	Vrf NullableBriefVRFRequest `json:"vrf,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	// Operational status of this range  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status *string `json:"status,omitempty"`
+	Status *PatchedWritableIPRangeRequestStatus `json:"status,omitempty"`
 	Role NullableBriefRoleRequest `json:"role,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Comments *string `json:"comments,omitempty"`
@@ -190,9 +189,9 @@ func (o *WritableIPRangeRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableIPRangeRequest) GetStatus() string {
+func (o *WritableIPRangeRequest) GetStatus() PatchedWritableIPRangeRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableIPRangeRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -200,7 +199,7 @@ func (o *WritableIPRangeRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableIPRangeRequest) GetStatusOk() (*string, bool) {
+func (o *WritableIPRangeRequest) GetStatusOk() (*PatchedWritableIPRangeRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -216,8 +215,8 @@ func (o *WritableIPRangeRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableIPRangeRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableIPRangeRequestStatus and assigns it to the Status field.
+func (o *WritableIPRangeRequest) SetStatus(v PatchedWritableIPRangeRequestStatus) {
 	o.Status = &v
 }
 

@@ -23,8 +23,7 @@ type L2VPNRequest struct {
 	Identifier NullableInt64 `json:"identifier,omitempty"`
 	Name string `json:"name"`
 	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
-	Type *string `json:"type,omitempty"`
+	Type *BriefL2VPNTypeValue `json:"type,omitempty"`
 	ImportTargets []int32 `json:"import_targets,omitempty"`
 	ExportTargets []int32 `json:"export_targets,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -147,9 +146,9 @@ func (o *L2VPNRequest) SetSlug(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *L2VPNRequest) GetType() string {
+func (o *L2VPNRequest) GetType() BriefL2VPNTypeValue {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret BriefL2VPNTypeValue
 		return ret
 	}
 	return *o.Type
@@ -157,7 +156,7 @@ func (o *L2VPNRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *L2VPNRequest) GetTypeOk() (*string, bool) {
+func (o *L2VPNRequest) GetTypeOk() (*BriefL2VPNTypeValue, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -173,8 +172,8 @@ func (o *L2VPNRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *L2VPNRequest) SetType(v string) {
+// SetType gets a reference to the given BriefL2VPNTypeValue and assigns it to the Type field.
+func (o *L2VPNRequest) SetType(v BriefL2VPNTypeValue) {
 	o.Type = &v
 }
 

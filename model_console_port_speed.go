@@ -19,9 +19,8 @@ var _ MappedNullable = &ConsolePortSpeed{}
 
 // ConsolePortSpeed struct for ConsolePortSpeed
 type ConsolePortSpeed struct {
-	// * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps
-	Value *int32 `json:"value,omitempty"`
-	Label *string `json:"label,omitempty"`
+	Value *ConsolePortSpeedValue `json:"value,omitempty"`
+	Label *ConsolePortSpeedLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewConsolePortSpeedWithDefaults() *ConsolePortSpeed {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ConsolePortSpeed) GetValue() int32 {
+func (o *ConsolePortSpeed) GetValue() ConsolePortSpeedValue {
 	if o == nil || IsNil(o.Value) {
-		var ret int32
+		var ret ConsolePortSpeedValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *ConsolePortSpeed) GetValue() int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsolePortSpeed) GetValueOk() (*int32, bool) {
+func (o *ConsolePortSpeed) GetValueOk() (*ConsolePortSpeedValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *ConsolePortSpeed) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given int32 and assigns it to the Value field.
-func (o *ConsolePortSpeed) SetValue(v int32) {
+// SetValue gets a reference to the given ConsolePortSpeedValue and assigns it to the Value field.
+func (o *ConsolePortSpeed) SetValue(v ConsolePortSpeedValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ConsolePortSpeed) GetLabel() string {
+func (o *ConsolePortSpeed) GetLabel() ConsolePortSpeedLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret ConsolePortSpeedLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *ConsolePortSpeed) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsolePortSpeed) GetLabelOk() (*string, bool) {
+func (o *ConsolePortSpeed) GetLabelOk() (*ConsolePortSpeedLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *ConsolePortSpeed) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ConsolePortSpeed) SetLabel(v string) {
+// SetLabel gets a reference to the given ConsolePortSpeedLabel and assigns it to the Label field.
+func (o *ConsolePortSpeed) SetLabel(v ConsolePortSpeedLabel) {
 	o.Label = &v
 }
 

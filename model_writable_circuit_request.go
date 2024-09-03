@@ -25,8 +25,7 @@ type WritableCircuitRequest struct {
 	Provider BriefProviderRequest `json:"provider"`
 	ProviderAccount NullableBriefProviderAccountRequest `json:"provider_account,omitempty"`
 	Type BriefCircuitTypeRequest `json:"type"`
-	// * `planned` - Planned * `provisioning` - Provisioning * `active` - Active * `offline` - Offline * `deprovisioning` - Deprovisioning * `decommissioned` - Decommissioned
-	Status *string `json:"status,omitempty"`
+	Status *CircuitStatusValue `json:"status,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	InstallDate NullableString `json:"install_date,omitempty"`
 	TerminationDate NullableString `json:"termination_date,omitempty"`
@@ -176,9 +175,9 @@ func (o *WritableCircuitRequest) SetType(v BriefCircuitTypeRequest) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableCircuitRequest) GetStatus() string {
+func (o *WritableCircuitRequest) GetStatus() CircuitStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret CircuitStatusValue
 		return ret
 	}
 	return *o.Status
@@ -186,7 +185,7 @@ func (o *WritableCircuitRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableCircuitRequest) GetStatusOk() (*string, bool) {
+func (o *WritableCircuitRequest) GetStatusOk() (*CircuitStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -202,8 +201,8 @@ func (o *WritableCircuitRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableCircuitRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given CircuitStatusValue and assigns it to the Status field.
+func (o *WritableCircuitRequest) SetStatus(v CircuitStatusValue) {
 	o.Status = &v
 }
 

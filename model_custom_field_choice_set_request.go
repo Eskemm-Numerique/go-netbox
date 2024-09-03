@@ -22,8 +22,7 @@ var _ MappedNullable = &CustomFieldChoiceSetRequest{}
 type CustomFieldChoiceSetRequest struct {
 	Name string `json:"name"`
 	Description *string `json:"description,omitempty"`
-	// * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
-	BaseChoices *string `json:"base_choices,omitempty"`
+	BaseChoices *CustomFieldChoiceSetBaseChoicesValue `json:"base_choices,omitempty"`
 	ExtraChoices [][]interface{} `json:"extra_choices"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically *bool `json:"order_alphabetically,omitempty"`
@@ -108,9 +107,9 @@ func (o *CustomFieldChoiceSetRequest) SetDescription(v string) {
 }
 
 // GetBaseChoices returns the BaseChoices field value if set, zero value otherwise.
-func (o *CustomFieldChoiceSetRequest) GetBaseChoices() string {
+func (o *CustomFieldChoiceSetRequest) GetBaseChoices() CustomFieldChoiceSetBaseChoicesValue {
 	if o == nil || IsNil(o.BaseChoices) {
-		var ret string
+		var ret CustomFieldChoiceSetBaseChoicesValue
 		return ret
 	}
 	return *o.BaseChoices
@@ -118,7 +117,7 @@ func (o *CustomFieldChoiceSetRequest) GetBaseChoices() string {
 
 // GetBaseChoicesOk returns a tuple with the BaseChoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldChoiceSetRequest) GetBaseChoicesOk() (*string, bool) {
+func (o *CustomFieldChoiceSetRequest) GetBaseChoicesOk() (*CustomFieldChoiceSetBaseChoicesValue, bool) {
 	if o == nil || IsNil(o.BaseChoices) {
 		return nil, false
 	}
@@ -134,8 +133,8 @@ func (o *CustomFieldChoiceSetRequest) HasBaseChoices() bool {
 	return false
 }
 
-// SetBaseChoices gets a reference to the given string and assigns it to the BaseChoices field.
-func (o *CustomFieldChoiceSetRequest) SetBaseChoices(v string) {
+// SetBaseChoices gets a reference to the given CustomFieldChoiceSetBaseChoicesValue and assigns it to the BaseChoices field.
+func (o *CustomFieldChoiceSetRequest) SetBaseChoices(v CustomFieldChoiceSetBaseChoicesValue) {
 	o.BaseChoices = &v
 }
 
