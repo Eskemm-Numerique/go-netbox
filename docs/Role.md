@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**PrefixCount** | **int64** |  | [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewRole
 
-`func NewRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, prefixCount int64, vlanCount int64, ) *Role`
+`func NewRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, vlanCount int64, ) *Role`
 
 NewRole instantiates a new Role object
 This constructor will assign default values to properties that have it defined,
@@ -316,6 +316,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *Role) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetVlanCount
 

@@ -20,13 +20,13 @@ Name | Type | Description | Notes
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **IpaddressCount** | **int64** |  | [readonly] 
-**PrefixCount** | **int64** |  | [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVRF
 
-`func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, prefixCount int64, ) *VRF`
+`func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, ) *VRF`
 
 NewVRF instantiates a new VRF object
 This constructor will assign default values to properties that have it defined,
@@ -465,6 +465,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *VRF) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

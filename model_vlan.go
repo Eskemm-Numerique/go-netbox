@@ -39,7 +39,7 @@ type VLAN struct {
 	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
-	PrefixCount int64 `json:"prefix_count"`
+	PrefixCount *int64 `json:"prefix_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,7 +49,7 @@ type _VLAN VLAN
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVLAN(id int32, url string, display string, vid int32, name string, l2vpnTermination NullableBriefL2VPNTermination, created NullableTime, lastUpdated NullableTime, prefixCount int64) *VLAN {
+func NewVLAN(id int32, url string, display string, vid int32, name string, l2vpnTermination NullableBriefL2VPNTermination, created NullableTime, lastUpdated NullableTime) *VLAN {
 	this := VLAN{}
 	this.Id = id
 	this.Url = url
@@ -59,7 +59,6 @@ func NewVLAN(id int32, url string, display string, vid int32, name string, l2vpn
 	this.L2vpnTermination = l2vpnTermination
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.PrefixCount = prefixCount
 	return &this
 }
 
@@ -597,28 +596,36 @@ func (o *VLAN) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetPrefixCount returns the PrefixCount field value
+// GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *VLAN) GetPrefixCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PrefixCount
+	return *o.PrefixCount
 }
 
-// GetPrefixCountOk returns a tuple with the PrefixCount field value
+// GetPrefixCountOk returns a tuple with the PrefixCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VLAN) GetPrefixCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		return nil, false
 	}
-	return &o.PrefixCount, true
+	return o.PrefixCount, true
 }
 
-// SetPrefixCount sets field value
+// HasPrefixCount returns a boolean if a field has been set.
+func (o *VLAN) HasPrefixCount() bool {
+	if o != nil && !IsNil(o.PrefixCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefixCount gets a reference to the given int64 and assigns it to the PrefixCount field.
 func (o *VLAN) SetPrefixCount(v int64) {
-	o.PrefixCount = v
+	o.PrefixCount = &v
 }
 
 func (o VLAN) MarshalJSON() ([]byte, error) {
@@ -666,7 +673,9 @@ func (o VLAN) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["prefix_count"] = o.PrefixCount
+	if !IsNil(o.PrefixCount) {
+		toSerialize["prefix_count"] = o.PrefixCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -688,7 +697,6 @@ func (o *VLAN) UnmarshalJSON(data []byte) (err error) {
 		"l2vpn_termination",
 		"created",
 		"last_updated",
-		"prefix_count",
 	}
 
 	allProperties := make(map[string]interface{})

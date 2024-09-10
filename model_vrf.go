@@ -39,7 +39,7 @@ type VRF struct {
 	Created NullableTime `json:"created"`
 	LastUpdated NullableTime `json:"last_updated"`
 	IpaddressCount int64 `json:"ipaddress_count"`
-	PrefixCount int64 `json:"prefix_count"`
+	PrefixCount *int64 `json:"prefix_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,7 +49,7 @@ type _VRF VRF
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, prefixCount int64) *VRF {
+func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64) *VRF {
 	this := VRF{}
 	this.Id = id
 	this.Url = url
@@ -58,7 +58,6 @@ func NewVRF(id int32, url string, display string, name string, created NullableT
 	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.IpaddressCount = ipaddressCount
-	this.PrefixCount = prefixCount
 	return &this
 }
 
@@ -550,28 +549,36 @@ func (o *VRF) SetIpaddressCount(v int64) {
 	o.IpaddressCount = v
 }
 
-// GetPrefixCount returns the PrefixCount field value
+// GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *VRF) GetPrefixCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PrefixCount
+	return *o.PrefixCount
 }
 
-// GetPrefixCountOk returns a tuple with the PrefixCount field value
+// GetPrefixCountOk returns a tuple with the PrefixCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VRF) GetPrefixCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		return nil, false
 	}
-	return &o.PrefixCount, true
+	return o.PrefixCount, true
 }
 
-// SetPrefixCount sets field value
+// HasPrefixCount returns a boolean if a field has been set.
+func (o *VRF) HasPrefixCount() bool {
+	if o != nil && !IsNil(o.PrefixCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefixCount gets a reference to the given int64 and assigns it to the PrefixCount field.
 func (o *VRF) SetPrefixCount(v int64) {
-	o.PrefixCount = v
+	o.PrefixCount = &v
 }
 
 func (o VRF) MarshalJSON() ([]byte, error) {
@@ -618,7 +625,9 @@ func (o VRF) ToMap() (map[string]interface{}, error) {
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 	toSerialize["ipaddress_count"] = o.IpaddressCount
-	toSerialize["prefix_count"] = o.PrefixCount
+	if !IsNil(o.PrefixCount) {
+		toSerialize["prefix_count"] = o.PrefixCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -639,7 +648,6 @@ func (o *VRF) UnmarshalJSON(data []byte) (err error) {
 		"created",
 		"last_updated",
 		"ipaddress_count",
-		"prefix_count",
 	}
 
 	allProperties := make(map[string]interface{})

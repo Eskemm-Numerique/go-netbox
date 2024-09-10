@@ -104124,7 +104124,7 @@ components:
       - display
       - id
       - name
-      - prefix_count
+      #- prefix_count
       - slug
       - url
       - vlan_count
@@ -104641,7 +104641,7 @@ components:
       - display
       - id
       - name
-      - prefix_count
+      #- prefix_count
       - url
     BriefVRFRequest:
       type: object
@@ -137781,7 +137781,7 @@ components:
       - id
       - last_updated
       - name
-      - prefix_count
+      #- prefix_count
       - slug
       - url
       - vlan_count
@@ -139730,7 +139730,7 @@ components:
       - l2vpn_termination
       - last_updated
       - name
-      - prefix_count
+      #- prefix_count
       - url
       - vid
     VLANGroup:
@@ -140170,7 +140170,7 @@ components:
       - ipaddress_count
       - last_updated
       - name
-      - prefix_count
+      #- prefix_count
       - url
     VRFRequest:
       type: object
